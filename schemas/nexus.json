@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProterolNexus",
+  "description": "JSON Schema for a Proterol transformational nexus: A =[omega]=> B",
+  "type": "object",
+  "required": ["source", "target", "operator"],
+  "properties": {
+    "source": { "type": "string", "description": "Origin domain node" },
+    "target": { "type": "string", "description": "Destination codomain node" },
+    "operator": { "type": "string", "description": "Operator key from family Omega" },
+    "operator_symbol": { "type": "string", "description": "Unicode symbol of operator" },
+    "label": { "type": "string", "description": "Optional human or semantic label" },
+    "attributes": { "type": "object", "description": "Morphism attributes and parameters" }
+  }
+}

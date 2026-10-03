@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CrystallizedTokenMetadata",
+  "description": "JSON Schema for Proterol Genetic Token metadata (ERC-721/1155/6551 compliant)",
+  "type": "object",
+  "required": ["name", "description", "image", "attributes"],
+  "properties": {
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "image": { "type": "string" },
+    "external_url": { "type": "string" },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["trait_type", "value"],
+        "properties": {
+          "trait_type": { "type": "string" },
+          "value": {}
+        }
+      }
+    },
+    "proterol_semantics": {
+      "type": "object",
+      "properties": {
+        "genes": { "type": "array", "items": { "type": "string" } },
+        "operators": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "type": "string" }
+      }
+    }
+  }
+}

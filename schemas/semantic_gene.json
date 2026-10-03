@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SemanticGene",
+  "description": "JSON Schema for a Proterol Semantic Gene atom: g = <id, tau, sigma, omega, pi, mu, rho, kappa, lambda>",
+  "type": "object",
+  "required": ["id", "tau", "sigma"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the semantic gene"
+    },
+    "tau": {
+      "type": "string",
+      "description": "Fundamental Proterol type",
+      "enum": [
+        "Entity", "Concept", "Relation", "Process", "State",
+        "Property", "Event", "Agent", "Data", "Rule",
+        "Proof", "Artifact", "Context", "Construct", "Language"
+      ]
+    },
+    "sigma": {
+      "type": "string",
+      "description": "Sign, glyph, or symbolic representation"
+    },
+    "omega": {
+      "type": "array",
+      "description": "Available operators in the gene's behavioral repertoire",
+      "items": { "type": "string" }
+    },
+    "pi": {
+      "type": "object",
+      "description": "Provenance record of the gene",
+      "properties": {
+        "source_uri": { "type": "string" },
+        "author": { "type": "string" },
+        "parent_gene_ids": { "type": "array", "items": { "type": "string" } },
+        "evidence_hash": { "type": "string" }
+      }
+    },
+    "mu": {
+      "type": "string",
+      "description": "Semantic meaning, intension, or conceptual definition"
+    },
+    "rho": {
+      "type": "object",
+      "description": "Multimodal rendering rules"
+    },
+    "kappa": {
+      "type": "array",
+      "description": "Invariants, formal constraints, and preconditions",
+      "items": { "type": "string" }
+    },
+    "lambda": {
+      "type": "string",
+      "description": "License or conditions of execution and recombination",
+      "default": "CC-BY-SA-4.0"
+    }
+  }
+}
